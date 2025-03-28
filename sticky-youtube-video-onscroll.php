@@ -89,6 +89,7 @@ class StickyYoutubeVideoOnscroll{
 	public function enqueue(){		
 		wp_enqueue_style( 'svyo-style', plugins_url( 'syvo-style.css', __FILE__ ));
 		wp_enqueue_script( 'svyo-script', plugins_url( 'assets/js/svyo-script.js', __FILE__ ));	
+		wp_enqueue_script( 'svyo-video-script', plugins_url( 'assets/js/svyo-video-script.js', __FILE__ ));	
 	}
 
 }	
