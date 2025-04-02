@@ -36,6 +36,7 @@ module.exports = function( grunt ) {
 					 */
 					'!Gruntfile.js',
 					'!postcss.config.js',
+					'!tailwind.config.js',
 					'!webpack.config.js',
 					'!package.json',
 					'!package-lock.json',
