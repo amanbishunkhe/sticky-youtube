@@ -19,8 +19,8 @@
 	    bottom: 3px;
 	    top: auto;
 	    left: auto;
-	    max-width: 280px;
-	    max-height: 158px;
+	    /* max-width: 280px; */
+	    /* max-height: 158px; */
 	    width: 280px;
 	    height: 158px;
 	    z-index: 9;

@@ -96,6 +96,7 @@
                 if (currentPlayer && closeButton) {
                     closeFloatVideo();
                     closeButton.addEventListener("click", function(e) {
+                        closeButton.style.display = "none";
                         if (currentPlayer.classList.contains("is-sticky")) {
                             currentPlayer.classList.remove("is-sticky");
                             closeFloatVideo();
@@ -112,6 +113,7 @@
                                 }
                             }
                         }
+                        
                     });
                 }
             }

@@ -16,13 +16,7 @@ class SvyoOption{
 		
 	}	
 
-	public function custom_youtube_block( $block_content, $block ) {
-
-		$admin_syvos_width 				= esc_attr( get_option( 'admin_syvos_width',280 ));
-		$admin_syvos_height 			= esc_attr( get_option( 'admin_syvos_height',160 ));
-		$front_syvos_syvos_width 		= $admin_syvos_width + absint( 470 );
-		$front_syvos_video_height 		= $admin_syvos_height + absint( 262 );		
-		$syvos_enable_youtube_sticky 	= esc_attr(get_post_meta( get_the_ID(), 'syvos_enable_youtube_sticky', TRUE ));
+	public function custom_youtube_block( $block_content, $block ) {		
 		
 	  	// use blockName to only affect the desired block 'core-embed/youtube', main
 
@@ -53,16 +47,21 @@ class SvyoOption{
 			$position_class = 'right-positon-class';
 		}
 
-	  	$content = '';
-	  	ob_start();
-	  		$content .= '<section class="videowrapper ytvideo '.esc_attr($position_class).' ">';
-	  	  	$content .= '<a href="javascript:void(0);" class="close-button"></a>';
-	  	  	$content .=	'<i class="fa fa-arrows-alt" aria-hidden="true"></i>';
-	  		$content .= '<div class="gradient-overlay"></div>';	
-	  		$content .='<iframe width="'.esc_attr( $front_syvos_syvos_width ).'" height="'.esc_attr($front_syvos_video_height).'" src="https://www.youtube.com/embed/'.esc_attr($youtube_video_id).'?enablejsapi=1&amp;?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
-	  		$content .= '</section>';
-	  		$content .= ob_get_clean();
-	  		return $content;
+		$admin_syvos_width = absint(get_option('admin_syvos_width', 280));
+		$admin_syvos_height = absint(get_option('admin_syvos_height', 160));
+		$front_syvos_syvos_width = $admin_syvos_width + 470;
+		$front_syvos_video_height = $admin_syvos_height + 262;
+		$syvos_enable_youtube_sticky = esc_attr(get_post_meta(get_the_ID(), 'syvos_enable_youtube_sticky', TRUE));
+
+		$content = '';
+		$content .= '<section class="videowrapper ytvideo '.esc_attr($position_class).'">';
+		$content .= '<a href="javascript:void(0);" class="close-button"></a>';
+		$content .= '<i class="fa fa-arrows-alt" aria-hidden="true"></i>';
+		$content .= '<div class="gradient-overlay"></div>';	
+		$content .= '<iframe width="'.esc_attr($front_syvos_syvos_width).'" height="'.esc_attr($front_syvos_video_height).'" src="https://www.youtube.com/embed/'.esc_attr($youtube_video_id).'?enablejsapi=1&rel=0&controls=1&showinfo=0" frameborder="0" allowfullscreen></iframe>';
+		$content .= '</section>';
+
+		return $content;
 	}
 
 	public function get_YoutubeVideoIdFromUrl( $url = '' ){
@@ -96,7 +95,7 @@ class SvyoOption{
 		$admin_syvos_enable_disable 	= esc_attr( get_option( 'admin_syvos_enable_disable',1 ) );
 
 		if( $admin_syvos_enable_disable == 1 ){
-			wp_enqueue_script( 'svyo-video-script', SYVOS_URL .'assets/js/svyo-video-script.js',array(),'1.0.3',true );	
+			wp_enqueue_script( 'svyo-video-script', SYVOS_URL .'assets/js/svyo-video-script.js',array(), SYVOS_VER ,true );	
 			
 		}
 		

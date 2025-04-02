@@ -49,6 +49,7 @@ class StickyYoutubeVideoOnscroll{
 	}
 
 	public function constants(){
+		defined( 'SYVOS_VER' ) || define( 'SYVOS_VER','1.0.3' );
 		defined( 'SYVOS_DIR' ) || define( 'SYVOS_DIR', plugin_dir_path( __FILE__ ) );
 		defined( 'SYVOS_URL' ) || define( 'SYVOS_URL', plugin_dir_url( __FILE__ ) );
 
@@ -92,8 +93,7 @@ class StickyYoutubeVideoOnscroll{
 	}	
 
 	public function enqueue(){			
-		wp_enqueue_style( 'svyo-style', SYVOS_URL . 'syvo-style.css', array(),'1.0.3','all');
-		wp_enqueue_script('svyo-script', SYVOS_URL . 'assets/js/svyo-script.js', array(), '1.0.3', true);
+		wp_enqueue_style( 'svyo-style', SYVOS_URL . 'syvo-style.css', array(), SYVOS_VER ,'all');		
 	}
 
 }	
