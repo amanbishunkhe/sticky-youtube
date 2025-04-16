@@ -2,8 +2,8 @@
 Contributors: Aarambha Themes
 Tags: video, sticky video 
 Requires at least: 5.7
-Tested up to: 6.4
-Stable tag: 1.0.2
+Tested up to: 6.7
+Stable tag: 1.0.3
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -59,6 +59,9 @@ It works only for the video uploaded from the youtube block now. We are working 
 
 
 == Changelog ==
+
+= 1.0.3 - April 16 2025 =
+* Tweak - supported for the FSE youtube video.
 
 = 1.0.2 - November 20 2023 =
 * Tested up to wp version 6.4
